@@ -9,32 +9,34 @@ public class Funct {
     Tasks tasks = new Tasks();
 
 
-
-    public String login() {
+    public boolean login(boolean b) {
         Scanner in = new Scanner(System.in);
         System.out.println("Please, enter your name ");
         String name = in.next();
         System.out.println("Please, enter your password ");
         String password = in.next();
 
-        String result = " ";
+        boolean result;
 
         if ((name.equals(def_name)) && (password.equals(def_password))) {
-            result = "login successful";
+            result = true;
+            System.out.println("login successful");
+
         } else {
-            result = "Error";
+            result = false;
+            System.out.println("Wrong password or Username");
         }
-        System.out.println(result);
+
         return result;
     }
+
     public String Tasks() {
         Scanner in = new Scanner(System.in);
         System.out.println("Which task do you want to start");
-        System.out.println("1.Even Number" +"\n2.Armstrong" +"\n3.Reverse" +"\n4.Fibonacci" +"\n5.Replace");
+        System.out.println("1.Even Number" + "\n2.Armstrong" + "\n3.Reverse" + "\n4.Fibonacci" + "\n5.Replace");
 
         String task = in.next();
         String result = " ";
-
 
 
         switch (task) {
@@ -69,6 +71,6 @@ public class Funct {
 
     }
 
-    }
+}
 
 

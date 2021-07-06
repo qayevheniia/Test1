@@ -1,4 +1,5 @@
 package com.mysite;
+
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -9,17 +10,17 @@ public class Tasks {
     public String evenNumber() {
         System.out.println("Please, enter number");
 
-            while (!sc.hasNextInt()) {
-                System.out.println("That not a number!" +"\nPLease enter number");
-                sc.next(); // this is important!
-            }
+        while (!sc.hasNextInt()) {
+            System.out.println("That not a number!" + "\nPLease enter number");
+            sc.next(); // this is important!
+        }
 
         int number = sc.nextInt();
         String result = " ";
 
         if (number % 2 == 0) {
             result = "This number is: even";
-        } else if (number % 2 != 0){
+        } else {
             result = "it's not even";
         }
         return result;
@@ -47,6 +48,7 @@ public class Tasks {
 
         return result;
     }
+
     public String reverse() {
         System.out.println("Please, enter string");
 
@@ -54,18 +56,19 @@ public class Tasks {
         String result = " ";
         char[] array = str.toCharArray();
 
-            for (int i = array.length - 1; i >= 0; i--) {
-                result = result + array[i];
-            }
-            return result;
+        for (int i = array.length - 1; i >= 0; i--) {
+            result = result + array[i];
+        }
+        return result;
 
 
     }
+
     public String fibonacci() {
 
         String result = " ";
 
-        long [] arr = new long [50];
+        long[] arr = new long[50];
         arr[0] = 0;
         arr[1] = 1;
         for (int i = 2; i < arr.length; ++i) {
@@ -76,21 +79,21 @@ public class Tasks {
 
 
     }
+
     public String replace() {
 
         String result = "";
         System.out.println("Please, enter string");
         String str = sc.nextLine();
-        String replace = str.replace('a', '@').replace('o','0');
+        String replace = str.replace('a', '@').replace('o', '0');
 
         char[] array = replace.toCharArray();
 
-        for (int i = 0; i < replace.length() && i<30; i++) {
-            result +=array[i];
+        for (int i = 0; i < replace.length() && i < 30; i++) {
+            result += array[i];
 
         }
         return result;
-
 
 
     }
