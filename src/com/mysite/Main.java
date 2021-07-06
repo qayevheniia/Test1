@@ -7,13 +7,13 @@ public class Main {
         Funct func = new Funct();
 
 
-        if (func.login().equals("login successful"))
-        {
+        if (func.login(true)) {
 
             func.Tasks();
-        }
-    else{
-            System.out.print("Error");
+        } else {
+            func.login(false);
+            System.out.println("Error");
+
         }
     }
 }
