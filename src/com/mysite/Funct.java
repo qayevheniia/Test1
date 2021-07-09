@@ -9,7 +9,19 @@ public class Funct {
     Users users = new Users();
 
 
-    public boolean login(boolean b) {
+    public boolean logic(String name, String password) {
+        if ((name.equals(users.def_name)) && (password.equals(users.def_password))) {
+            System.out.println("login successful");
+            return true;
+
+        } else {
+            System.out.println("Wrong password or Username" + "\n" + "Please try again");
+            return false;
+        }
+    }
+
+
+    public boolean login(boolean res) {
         Scanner in = new Scanner(System.in);
         boolean result = false;
         int i = 0;
@@ -22,14 +34,8 @@ public class Funct {
             String password = in.next();
             i++;
 
-            if ((name.equals(users.def_name)) && (password.equals(users.def_password))) {
-                result = true;
-                System.out.println("login successful");
+            result = logic(name, password);
 
-            }
-            else {
-                System.out.println("Wrong password or Username" + "\n" + "Please try again");
-            }
         }
 
         return result;
