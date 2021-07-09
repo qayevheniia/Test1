@@ -4,27 +4,32 @@ import java.util.Scanner;
 
 public class Funct {
 
-    String def_name = "y";
-    String def_password = "p";
+
     Tasks tasks = new Tasks();
+    Users users = new Users();
 
 
     public boolean login(boolean b) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please, enter your name ");
-        String name = in.next();
-        System.out.println("Please, enter your password ");
-        String password = in.next();
+        boolean result = false;
+        int i = 0;
 
-        boolean result;
 
-        if ((name.equals(def_name)) && (password.equals(def_password))) {
-            result = true;
-            System.out.println("login successful");
+        while (result == false && i < 3) {
+            System.out.println("Please, enter your name ");
+            String name = in.next();
+            System.out.println("Please, enter your password ");
+            String password = in.next();
+            i++;
 
-        } else {
-            result = false;
-            System.out.println("Wrong password or Username");
+            if ((name.equals(users.def_name)) && (password.equals(users.def_password))) {
+                result = true;
+                System.out.println("login successful");
+
+            }
+            else {
+                System.out.println("Wrong password or Username" + "\n" + "Please try again");
+            }
         }
 
         return result;

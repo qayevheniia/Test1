@@ -8,15 +8,12 @@ public class Main {
 
 
         if (func.login(true)) {
-
             func.Tasks();
-        } else {
-            func.login(false);
-            System.out.println("Error");
 
         }
     }
 }
+
 
 
 
